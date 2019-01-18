@@ -1,0 +1,35 @@
+{
+  "name": "reporter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*Test.ts"
+  },
+  "dependencies": {
+    "@hazpro/auth": "^1.0.1",
+    "carbone": "^1.1.0",
+    "jsonwebtoken": "^8.4.0",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.10",
+    "node-forge": "^0.7.6",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/chai": "^4.1.7",
+    "@types/koa-router": "^7.0.37",
+    "@types/lodash": "^4.14.119",
+    "@types/mongodb": "^3.1.18",
+    "@types/node": "^10.12.18",
+    "@types/node-forge": "^0.7.10",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mongo-mock": "^3.3.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  }
+}
