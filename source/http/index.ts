@@ -12,6 +12,7 @@ import * as listTemplate from '../http/middleware/template/routeListTemplate'
 import * as updateTemplate from '../http/middleware/template/routeUpdateTemplate'
 import * as removeTemplate from '../http/middleware/template/routeRemoveTemplate'
 import * as reportRender from '../http/middleware/report'
+import { IConfig } from '../config';
 
 export default class HttpServer {
     httpHandler: Koa
@@ -23,10 +24,9 @@ export default class HttpServer {
     ca: Auth
     /** */
     constructor(
-        port: number,
         logger: winston.Logger = null,
         db: DB,
-        config: any
+        config: IConfig
     ) {
         this.db = db
         this.config = config
@@ -34,7 +34,7 @@ export default class HttpServer {
             this.db.connect()
         }
         this.ca = new Auth(config.ca)
-        this.port = port
+        this.port = config.http.port
         this.httpHandler = new Koa()
         this.router = new Router()
         if (!logger) {
